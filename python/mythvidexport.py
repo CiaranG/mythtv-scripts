@@ -406,7 +406,7 @@ def main():
             export = VIDEO(opts,int(args[0]))
         except Exception, e:
             Job(int(args[0])).update({'status':Job.ERRORED,
-                                      'comment':'ERROR: '+e.args[0]})
+                                      'comment':'ERROR: '+str(e.args[0])})
             MythLog(module='mythvidexport.py').logTB(MythLog.GENERAL)
             sys.exit(1)
     else:
